@@ -32,6 +32,54 @@
     </section>
     <!-- header section ends -->
 
+    <div class="heading" style="background:url(images/home-slides-1.jpg) no-repeat">
+        <h1>packages</h1>
+    </div>
+
+    <!-- booking section start -->
+    <section class="booking">
+        <h1 class="heading-title">book your trip!</h1>
+        <form action="book_form.php" method="post" class="book-form">
+            <div class="flex">
+                <div class="inputBox">
+                    <span>name :</span>
+                    <input type="text" placeholder="enter your name" name="name">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="enter your email" name="email">
+                </div>
+                <div class="inputBox">
+                    <span>phone :</span>
+                    <input type="number" placeholder="enter your phone number" name="phone">
+                </div>
+                <div class="inputBox">
+                    <span>addres :</span>
+                    <input type="text" placeholder="enter your address" name="address">
+                </div>
+                <div class="inputBox">
+                    <span>Where to :</span>
+                    <input type="text" placeholder="place you want to visit" name="location">
+                </div>
+                <div class="inputBox">
+                    <span>how many :</span>
+                    <input type="number" placeholder="number guest" name="guest">
+                </div>
+                <div class="inputBox">
+                    <span>arrivals :</span>
+                    <input type="date"name="arrivals">
+                </div>
+                <div class="inputBox">
+                    <span>leaving :</span>
+                    <input type="date" name="leaving">
+                </div>
+            </div>
+
+            <input type="submit" value="submit" class="btn" name="send">;
+        </form>
+    </section>
+
+    <!-- booking section end -->
 
     <!-- footer section start -->
     <section class="footer">

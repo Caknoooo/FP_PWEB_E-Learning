@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$nama_database = "sewa_lapangan";
+$nama_database = "fp-pweb";
 
 $db = mysqli_connect($server, $user, $password, $nama_database);
 
