@@ -180,56 +180,6 @@
 
     <!-- home packages end -->
 
-    <!-- home offer start -->
-
-    <section class="home-offer">
-        <div class="content">
-            <h3>our partners</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
-                feugiat nisl.
-                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
-            <a href="book.php" class="btn">book now</a>
-        </div>
-    </section>
-
-    <!-- home offer end -->
-
-    <!-- about start -->
-
-    <section class="about">
-        <div class="image">
-            <img src="images/about-img.jpg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>why choose us?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
-                feugiat nisl.
-                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci. In sed vulputate sem. Aliquam et
-                orci quis
-                nunc tincidunt malesuada. Pellentesque rhoncus dui sit amet purus imperdiet lacinia. </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
-                feugiat nisl.
-                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
-            <div class="icons-container">
-                <div class="icons">
-                    <i class="fas fa-map"></i>
-                    <span>top destination</span>
-                </div>
-                <div class="icons">
-                    <i class="fas fa-hsnd-holding-usd"></i>
-                    <span>affordable price</span>
-                </div>
-                <div class="icons">
-                    <i class="fas fa-headset"></i>
-                    <span>24/7 guide service</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- about end -->
-
     <!-- reviews start -->
 
     <section class="reviews">
