@@ -461,7 +461,7 @@ section {
 .packages .box-container .box .image img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: .2s linear;
 }
 
@@ -479,6 +479,7 @@ section {
     font-size: 1.5rem;
     color: var(--light-black);
     line-height: 2;
+    height: 200px;
     padding: 1rem 0;
 }
 

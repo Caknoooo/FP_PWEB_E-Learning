@@ -1,3 +1,5 @@
+<?php include('config.php'); ?>
+
 <!-- reviews end -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package</title>
+    <title>Courses</title>
 
     <!-- swipper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -25,119 +27,40 @@
         <nav class="navbar">
             <a href="home.php">home</a>
             <a href="about.php">about</a>
-            <a href="package.php">package</a>
-            <a href="book.php">book</a>
+            <a href="package.php">courses</a>
+            <a href="book.php">profile</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </section>
     <!-- header section ends -->
 
-    <div class="heading" style="background:url(images/home-slides-1.jpg) no-repeat">
-        <h1>packages</h1>
+    <div class="heading" style="background:url(images/courses-banner.jpg) no-repeat">
+        <h1>E-Learning</h1>
     </div>
 
+    <?php
+    $sql="SELECT * FROM course";
+    $query=mysqli_query($db,$sql);
+    ?>
     <!-- packages section starts -->
     <section class="packages">
-        <h1 class="heading-title">top destination</h1>
+        <h1 class="heading-title">course lists</h1>
 
         <div class="box-container">
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/image-1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>lorem</p>
-                    <a href="book.php" class="btn">book now</a>
-                </div>
-            </div>
+            <?php
+            while($courses=mysqli_fetch_array($query)){
+                echo'<div class="box">';
+                echo'<div class="image">';
+                echo"<img src='./".$courses['gambar']."'>";
+                echo'</div>';
+                echo'<div class="content">';
+                echo"<h3>".$courses['nama']."</h3>";
+                echo"<p>".$courses['deskripsi']."</p>";
+                echo'<a href="join-course.php" class="btn">join course</a>';
+                echo'</div>';
+                echo'</div>';
+            }
+            ?>
         </div>
 
     </section>
