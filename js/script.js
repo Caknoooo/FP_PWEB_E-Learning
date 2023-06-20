@@ -19,7 +19,7 @@ var swiper = new Swiper(".home-slider", {
     },
 });
 
-var swiper = new Swiper(".review-slider", {
+var swiper = new Swiper(".reviews-slider", {
   loop:true,
   spaceBetween: 20,
   autoHeight: true,
