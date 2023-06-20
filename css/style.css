@@ -44,19 +44,41 @@ section {
     padding: 5rem 10%;
 }
 
-.heading{
+@keyframes fadeIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--black);
+    margin-top: 1rem;
+    color: var(--white);
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+}
+
+.heading {
     background-size: cover !important;
     background-position: center !important;
-    padding:10rem 0 15rem 0;
+    padding: 10rem 0 15rem 0;
     display: flex;
     text-align: center;
     justify-content: center;
 }
 
-.heading h1{
+.heading h1 {
     font-size: 10rem;
     text-transform: uppercase;
-    color:var(--white);
+    color: var(--white);
     text-shadow: var(--text-shadow);
 }
 
@@ -105,6 +127,79 @@ section {
     display: none;
 }
 
+.home {
+    padding: 0;
+}
+
+.home .slide {
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 60rem;
+}
+
+.home .slide .content {
+    width: 85rem;
+    display: none;
+}
+
+.home .swiper-slide-active .content {
+    display: inline-block;
+}
+
+.home .slide .content span {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--light-white);
+    padding-bottom: 1rem;
+    animation: fadeIn .2s linear backwards .2s;
+}
+
+.home .slide .content h3 {
+    font-size: 6vw;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: var(--text-shadow);
+    padding: 1rem 0;
+    animation: fadeIn .2s linear backwards .4s;
+}
+
+.home .slide .content .btn {
+    animation: fadeIn .2s linear backwards .6s;
+}
+
+.home .swiper-button-next,
+.home .swiper-button-prev {
+    top: inherit;
+    left: inherit;
+    bottom: 0;
+    right: 0;
+    height: 7rem;
+    width: 7rem;
+    background: var(--white);
+    columns: var(--black);
+}
+
+.home .swiper-button-next:hover,
+.home .swiper-button-prev:hover {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+.home .swiper-button-next:after,
+.home .swiper-button-prev:after {
+    font-size: 2rem;
+}
+
+.home .swiper-button-prev {
+    right: 7rem;
+}
+
 .services .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -131,127 +226,166 @@ section {
     padding-top: 1rem;
 }
 
-.home .home-packages{
+.home-about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-about .image {
+    flex: 1 1 41rem;
+}
+
+
+.home-about .image img {
+    width: 100%;
+}
+
+.home-about .content {
+    flex: 1 1 41rem;
+    padding: 3rem;
     background: var(--light-bg);
 }
-  
-.home-packages .box-container{
+
+.home-about .content h3{
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.home-about .content p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 2;
+    color: var(--black);
+}
+
+.home .home-packages {
+    background: var(--light-bg);
+}
+
+.home-packages .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
 }
 
-.home-packages .box-container .box{
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    background: var(--white);
+.home-packages .box-container .image{
+    height: 25rem;
+    overflow: hidden;
 }
 
-.home-packages .box-container .box .image{
+.home-packages .box-container .box .image img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: .2s linear;
 }
 
-.home-packages .box-container .box .content{
+.home-packages .box-container .box {
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+}
+
+
+.home-packages .box-container .box .content {
     padding: 2rem;
     text-align: center;
 }
 
-.home-packages .box-container .box .content h3{
+.home-packages .box-container .box .content h3 {
     font-size: 2.5rem;
-    color:var(--black);
+    color: var(--black);
 }
 
-.home-packages .box-container .box .content p{
+.home-packages .box-container .box .content p {
     font-size: 1.5rem;
-    color:var(--light-black);
+    color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
 }
 
-.home-packages .load-more{
+.home-packages .load-more {
     text-align: center;
     margin-top: 2rem;
 }
 
-.home-offer{
-    text-align: center;   
+.home-offer {
+    text-align: center;
 }
 
-.home-offer .content{
+.home-offer .content {
     max-width: 70rem;
     margin: 0 auto;
 }
 
-.home-offer .content h3{
+.home-offer .content h3 {
     font-size: 3.5rem;
-    color:var(--black);
+    color: var(--black);
 }
 
-.home-offer .content p{
+.home-offer .content p {
     font-size: 1.5rem;
-    color:var(--light-black);
+    color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
 }
 
-.about{
+.about {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem; 
+    gap: 3rem;
 }
 
-.about .image{
+.about .image {
     flex: 1 1 41rem;
 }
 
-.about .image img{
+.about .image img {
     width: 100%;
 }
 
-.about .content{
+.about .content {
     flex: 1 1 41rem;
     text-align: center;
 }
 
-.about .content h3{
+.about .content h3 {
     font-size: 3rem;
-    color:var(--black);
+    color: var(--black);
 }
 
-.about .content p{
+.about .content p {
     font-size: 1.5rem;
-    color:var(--light-black);
+    color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
 }
 
-.about .content .icons-container{
+.about .content .icons-container {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap:1.5rem;
+    gap: 1.5rem;
     align-items: flex-end;
 }
 
-.about .content .icons-container .icons{
+.about .content .icons-container .icons {
     background: var(--light-bg);
     padding: 2rem;
     flex: 1 1 16rem;
 }
 
-.about .content .icons-container .icons i{
+.about .content .icons-container .icons i {
     font-size: 4rem;
     margin-bottom: 2rem;
     color: var(--main-color);
 }
 
-.about .content .icons-container .icons span{
+.about .content .icons-container .icons span {
     font-size: 1.5rem;
-    color:var(--light-black);
+    color: var(--light-black);
     display: block;
 }
 
@@ -307,6 +441,7 @@ section {
 
 
 
+
 /* media queries */
 @media (max-width:1200px) {
     section {
@@ -321,6 +456,10 @@ section {
 
     section {
         padding: 3rem 2rem;
+    }
+
+    .home .slide .content h3 {
+        font-size: 10vw;
     }
 }
 
