@@ -189,7 +189,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
                 feugiat nisl.
                 Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
-            <a href="book.php" class="btn">book now</a>
         </div>
     </section>
 
