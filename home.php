@@ -180,30 +180,20 @@
 
     <!-- home packages end -->
 
-    <!-- reviews start -->
 
-    <section class="reviews">
-        <div class="review-slider">
-            <div class="w">
-                <div class="slide">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac,
-                        pretium feugiat nisl.
-                        Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci. In sed vulputate sem.
-                        Aliquam et orci quis
-                        nunc tincidunt malesuada. Pellentesque rhoncus dui sit amet purus imperdiet lacinia. </p>
-                </div>
-            </div>
+    <!-- home offer start -->
+
+    <section class="home-offer">
+        <div class="content">
+            <h3>our partners</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
+                feugiat nisl.
+                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
+            <a href="book.php" class="btn">book now</a>
         </div>
     </section>
 
-    <!-- reviews end -->
+    <!-- home offer end -->
 
     <!-- footer section start -->
     <section class="footer">

@@ -32,20 +32,8 @@
     </section>
     <!-- header section ends -->
 
-    
-    <!-- home offer start -->
 
-    <section class="home-offer">
-        <div class="content">
-            <h3>our partners</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
-                feugiat nisl.
-                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
-            <a href="book.php" class="btn">book now</a>
-        </div>
-    </section>
 
-    <!-- home offer end -->
 
     <!-- about start -->
 
@@ -83,9 +71,9 @@
 
     <!-- about end -->
 
-        <!-- reviews start -->
+    <!-- reviews start -->
 
-        <section class="reviews">
+    <section class="reviews">
         <div class="review-slider">
             <div class="w">
                 <div class="slide">
@@ -107,6 +95,7 @@
     </section>
 
     <!-- reviews end -->
+
 
     <!-- footer section start -->
     <section class="footer">
