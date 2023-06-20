@@ -25,8 +25,8 @@
         <nav class="navbar">
             <a href="home.php">home</a>
             <a href="about.php">about</a>
-            <a href="package.php">package</a>
-            <a href="book.php">book</a>
+            <a href="course.php">course</a>
+            <a href="profile.php">profile</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
     </section>
@@ -119,21 +119,6 @@
 
     <!-- home about section ends -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- home packages start -->
     <section class="home-packages">
 
@@ -181,23 +166,31 @@
     <!-- home packages end -->
 
 
-    <!-- home offer start -->
+    <!-- home partenr start -->
 
     <section class="home-offer">
         <div class="content">
             <h3>our partners</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac, pretium
-                feugiat nisl.
-                Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
         </div>
+        <div class="box-container">
+            <?php
+            include("./config.php");
+
+            $sql_get_pesan = "SELECT gambar_logo FROM partners";
+
+            $pesans = mysqli_query($db, $sql_get_pesan);
+
+            while ($row = mysqli_fetch_array($pesans)) {
+                echo '<div class="box">';
+                echo ' <div class="image"> <img src="' . $row['gambar_logo'] . '.png"> </div>';
+                echo ' </div>';
+            }
+            ?>
+        </div>
+
     </section>
 
-    <!-- home offer end -->
-
-    <!-- partners starts -->
-
-    
-    <!-- partners ends -->
+    <!-- home partner end -->
 
     <!-- footer section start -->
     <section class="footer">
@@ -206,8 +199,8 @@
                 <h3>quick links</h3>
                 <a href="home.php"> <i class="fas fa-angle-right"></i> home</a>
                 <a href="about.php"> <i class="fas fa-angle-right"></i> about</a>
-                <a href="package.php"> <i class="fas fa-angle-right"></i> package</a>
-                <a href="book.php"> <i class="fas fa-angle-right"></i> book</a>
+                <a href="course.php"> <i class="fas fa-angle-right"></i> course</a>
+                <a href="profile.php"> <i class="fas fa-angle-right"></i> profile</a>
             </div>
 
             <div class="box">

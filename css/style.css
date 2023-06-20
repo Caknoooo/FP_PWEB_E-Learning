@@ -321,6 +321,7 @@ section {
 
 .home-offer .content h3 {
     font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     color: var(--black);
 }
 
@@ -329,6 +330,18 @@ section {
     color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
+}
+
+.home-offer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+
+.home-offer .box-container .box {
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background: var(--white);
 }
 
 .about {
@@ -461,7 +474,7 @@ section {
 .packages .box-container .box .image img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: .2s linear;
 }
 
@@ -479,56 +492,31 @@ section {
     font-size: 1.5rem;
     color: var(--light-black);
     line-height: 2;
+    height: 200px;
     padding: 1rem 0;
 }
 
-.booking .book-formm {
-    padding: 2rem;
-    background: var(--light-bg);
+.profile {
+    text-align: left;
 }
 
-.booking .book-formm .flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+.profile .content {
+    max-width: 70rem;
+    margin: 0 auto;
 }
 
-.booking .book-formm .flex .inputBox {
-    flex: 1 1 41rem;
+.profile .content h3 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--black);
 }
 
-.booking .book-formm .flex .inputBox input {
-    width: 100%;
-    padding: 1.2rem 1.3rem;
-    font-size: 1.6rem;
+.profile .content p {
+    font-size: 1.5rem;
     color: var(--light-black);
-    text-transform: none;
-    margin-top: 1.5rem;
-    border: var(--border);
+    line-height: 2;
+    padding: 1rem 0;
 }
-
-
-.booking .book-formm .flex .inputBox input:focus {
-    background: var(--black);
-    color: var(--white);
-}
-
-.booking .book-formm .flex .inputBox input:focus::placeholder {
-    background: var(--black);
-    color: var(--light-white);
-}
-
-.booking .book-formm .flex .inputBox span {
-    font-size: 1rem;
-    color: var(--light-black);
-}
-
-.booking .book-formm .btn {
-    margin-top: 2rem;
-}
-
-
-
 
 
 
