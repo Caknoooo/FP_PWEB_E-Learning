@@ -1,9 +1,6 @@
 <?php
 session_start();
-
 include("config.php");
-
-$navbarLoginText = "Login"; // Teks awal untuk tautan login
 
 if (isset($_SESSION['loginInfo'])) {
   $loginInfo = $_SESSION['loginInfo'];
@@ -23,32 +20,59 @@ if (isset($_SESSION['loginInfo'])) {
   }
 }
 
+// Periksa apakah pengguna sudah login
+if (!isset($_SESSION['email'])) {
+  // Jika pengguna belum login, redirect ke halaman login
+  header("Location: login.php");
+  exit();
+}
+
+// Periksa apakah ada parameter course ID yang dikirimkan melalui URL
+if (!isset($_GET['id'])) {
+  // Jika tidak ada course ID, redirect ke halaman course
+  header("Location: course.php");
+  exit();
+}
+
+// Dapatkan course ID dari parameter URL
+$courseId = $_GET['id'];
+
+// Query untuk mendapatkan informasi kursus berdasarkan course ID
+$query = "SELECT * FROM course WHERE id = $courseId";
+$result = mysqli_query($db, $query);
+
+// Periksa apakah kursus ditemukan
+if (mysqli_num_rows($result) == 0) {
+  // Jika kursus tidak ditemukan, redirect ke halaman course
+  header("Location: course.php");
+  exit();
+}
+
+// Ambil data kursus dari hasil query
+$course = mysqli_fetch_assoc($result);
+
+// Tampilkan informasi kursus
 ?>
 
-<!-- reviews end -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-
-  <!-- swipper css link -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- font awesome cdn link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Course Detail</title>
   <!-- custom css file link -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- tailwind cdn -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- header section starts -->
   <section class="header">
     <a href="home" class="logo">E-Learning</a>
 
@@ -70,56 +94,41 @@ if (isset($_SESSION['loginInfo'])) {
     </nav>
     <div id="menu-btn" class="fas fa-bars"></div>
   </section>
-  <!-- header section ends -->
 
-  <!-- profile section start -->
-  <section class="profile">
-    <div class="content">
-      <h3>Welcome <?php echo $name; ?></h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ex nibh, mattis ut nisi ac,
-        pretium feugiat nisl.
-        Sed urna ligula, tincidunt vel neque tempus, luctus fermentum orci.</p>
-    </div>
-  </section>
-  <!-- profile section ends -->
-
-  <!-- profile's course starts -->
-  <section class="packages">
-    <div class="home-offer">
-      <div class="content">
-        <h3>Your Course</h3>
+  <section class="bg-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center">
+      <div class="container mx-auto px-4 py-6 flex-grow">
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <div class="w-full md:w-1/2">
+            <img class="w-full h-auto" src="<?php echo $course['gambar']; ?>" alt="Course Image">
+          </div>
+          <div class="w-full md:w-1/2 text-center">
+            <h3 class="text-3xl font-semibold mb-4"><?php echo $course['nama']; ?></h3>
+            <p class="text-gray-600 mb-6"><?php echo $course['deskripsi']; ?></p>
+            <div class="flex flex-wrap mb-6">
+              <div class="w-full md:w-1/2 lg:w-1/3">
+                <p class="mb-2 text-gray-700">Durasi:</p>
+                <p><?php echo $course['durasi']; ?> jam</p>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-1/3">
+                <p class="mb-2 text-gray-700">Jumlah Modul:</p>
+                <p><?php echo $course['jumlah_modul']; ?></p>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-1/3">
+                <p class="mb-2 text-gray-700">Tingkat Kesulitan:</p>
+                <p><?php echo $course['tingkat']; ?></p>
+              </div>
+            </div>
+            <form action="join_course_process.php" method="POST">
+              <input type="hidden" name="courseId" value="<?php echo $course['id']; ?>">
+              <button type="submit" name="joinCourse" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded mt-6">Join Course</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="box-container">
-      <?php
-      $userId = $_SESSION['loginInfo']['id'];
-      $sql = "SELECT * FROM course c INNER JOIN course_user cu ON c.id = cu.cid WHERE cu.uid = $userId";
-      $query = mysqli_query($db, $sql);
-      if (mysqli_num_rows($query) > 0) {
-        while ($row = mysqli_fetch_assoc($query)) {
-          echo '<div class="box bg-white rounded-lg shadow-md p-4">';
-          echo '  <div class="content flex flex-col items-center">';
-          echo '    <div class="">';
-          echo '      <img src="' . $row['gambar'] . '" alt="Profile Picture" class="object-contain h-40">';
-          echo '    </div>';
-          echo '    <h3>' . $row['nama'] . '</h3>';
-          echo '  </div>';
-          echo '</div>';
-
-        }
-      } else {
-        echo '<div class="box">';
-        echo '<div class="content">';
-        echo "<h3>No Course Found</h3>";
-        echo '</div>';
-        echo '</div>';
-      }
-      ?>
-    </div>
   </section>
-  <!-- profile's course ends -->
 
-  <!-- profile's course ends -->
 
 
   <!-- footer section start -->
@@ -162,13 +171,6 @@ if (isset($_SESSION['loginInfo'])) {
     <div class="credit">All Right Reserved</div>
 
   </section>
-  <!-- footer section ends -->
-
-  <!-- swiper js link -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <!-- custom js file link -->
-  <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -518,38 +518,6 @@ section {
     padding: 1rem 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer {
     background: url(../images/bg_footer.jpg) no-repeat;
     background-size: cover;
@@ -595,13 +563,6 @@ section {
     font-size: 2rem;
     color: var(--white);
 }
-
-
-
-
-
-
-
 
 /* media queries */
 @media (max-width:1200px) {
