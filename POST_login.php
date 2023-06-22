@@ -6,7 +6,6 @@ include("config.php");
 if (isset($_POST['login'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $id = 0;
 
   if (empty($email) || empty($password)) {
     echo "<script>
@@ -20,10 +19,24 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
       $row = mysqli_fetch_array($result);
-      // Jika data ditemukan, set session dan redirect ke halaman utama
+      $role = $row['role'];
+
+      // Set session dengan informasi login
       $_SESSION['loginInfo'] = $row;
       $_SESSION['email'] = $email;
-      header("Location: home.php");
+      $_SESSION['name'] = $row['nama'];
+
+      // Redirect sesuai dengan role pengguna
+      if ($role == 'admin') {
+        header("Location: admin/home.php");
+      } elseif ($role == 'user') {
+        header("Location: home.php");
+      } else {
+        echo "<script>
+                alert('Invalid role');
+                window.location.href = 'login.php';
+              </script>";
+      }
     } else {
       // Jika data tidak ditemukan, tampilkan pesan error menggunakan JavaScript
       echo "<script>

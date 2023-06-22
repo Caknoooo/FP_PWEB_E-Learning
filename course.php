@@ -18,10 +18,16 @@ if (isset($_SESSION['loginInfo'])) {
     $row = mysqli_fetch_array($query);
     $name = $row['nama'];
     $id = $row['id'];
+    $role = $row['role'];
   }
 
   if (!empty($name)) {
     $navbarLoginText = $name; // Jika nama pengguna tersedia, ganti teks dengan nama pengguna
+  }
+
+  if ($role === 'admin') {
+    header("Location: admin/home.php");
+    exit();
   }
 }
 

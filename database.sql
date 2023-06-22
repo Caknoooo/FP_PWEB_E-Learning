@@ -152,9 +152,12 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
+  `role` varchar(20) NOT NULL,
   `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+INSERT INTO user (id, nama, email, role, password) VALUES (1, 'Admin', 'admin@gmail.com', 'admin', 'password');
 --
 -- Indexes for dumped tables
 --

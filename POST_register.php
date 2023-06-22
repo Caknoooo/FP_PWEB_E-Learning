@@ -6,6 +6,7 @@ include("config.php");
 if (isset($_POST['daftar'])) {
   $name = $_POST['name'];
   $email = $_POST['email'];
+  $role = 'user';
   $password = $_POST['password'];
   $confirm_password = $_POST['confirm_password'];
 
@@ -23,7 +24,7 @@ if (isset($_POST['daftar'])) {
       echo "<script>alert('Password and Confirm Password do not match')</script>";
       echo "<script>window.location.href = 'register.php'</script>";
     } else {
-      $sql = "INSERT INTO user (nama, email, password) VALUES ('$name', '$email', '$password')";
+      $sql = "INSERT INTO user (nama, email, password, role) VALUES ('$name', '$email', '$password', '$role')";
       $query = mysqli_query($db, $sql);
 
       if ($query) {
