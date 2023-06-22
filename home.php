@@ -62,7 +62,6 @@ if (isset($_SESSION['loginInfo'])) {
         echo '<a href="profile.php" class="text-white bg-yellow-200 hover:bg-yellow-300 focus:ring-yellow-400 font-medium rounded-lg text-sm px-8 ml-2 py-4 mr-2.5 mb-2">' . $name . '</a>';
         echo '<a href="login.php" class="text-white bg-red-200 hover:bg-red-300 focus:ring-red-400 font-medium rounded-lg text-sm px-8 ml-2 py-4 mr-2.5 mb-2">Logout</a>';
       } else {
-        echo '<a href="profile.php">profile</a>';
         // Jika pengguna belum login, tampilkan tombol login
         echo '<a href="login.php" class="text-white bg-yellow-200 hover:bg-yellow-300 focus:ring-yellow-400 font-medium rounded-lg text-sm px-8 ml-2 py-4 mr-2.5 mb-2">Login</a>';
       }
@@ -76,27 +75,27 @@ if (isset($_SESSION['loginInfo'])) {
   <section class="home">
     <div class="swiper home-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide slide" style="background:url(images/home-slides-1.jpg) no-repeat">
+        <div class="swiper-slide slide" style="background:url(images/home-slides-4.jpg) no-repeat">
           <div class="content">
-            <span>explore, discover, travel</span>
-            <h3>travel around the world</h3>
-            <a href="package.php" class="btn">discover more</a>
+            <span>Explore your brain</span>
+            <h3>Recipes tell you nothing. Learning techniques is the key.</h3>
+            <a href="package.php" class="btn">Let's Go!</a>
           </div>
         </div>
 
-        <div class="swiper-slide slide" style="background:url(images/home-slides-2.jpg) no-repeat">
+        <div class="swiper-slide slide" style="background:url(images/home-slides-5.jpg) no-repeat">
           <div class="content">
-            <span>explore, discover, travel</span>
-            <h3>travel around the world</h3>
-            <a href="package.php" class="btn">discover more</a>
+            <span>Explore your brain</span>
+            <h3>Recipes tell you nothing. Learning techniques is the key.</h3>
+            <a href="package.php" class="btn">Let's Go!</a>
           </div>
         </div>
 
-        <div class="swiper-slide slide" style="background:url(images/home-slides-3.jpg) no-repeat">
+        <div class="swiper-slide slide" style="background:url(images/home-slides-6.jpg) no-repeat">
           <div class="content">
-            <span>explore, discover, travel</span>
-            <h3>travel around the world</h3>
-            <a href="package.php" class="btn">discover more</a>
+            <span>Explore your brain</span>
+            <h3>Recipes tell you nothing. Learning techniques is the key.</h3>
+            <a href="package.php" class="btn">Let's Go!</a>
           </div>
         </div>
       </div>
@@ -113,28 +112,28 @@ if (isset($_SESSION['loginInfo'])) {
 
     <div class="box-container">
       <div class="box">
-        <img src="images/" alt="">
-        <h3>adventure</h3>
+        <img src="images/dart.png" alt="" class="h-full w-full">
+        <h3>Dart</h3>
       </div>
       <div class="box">
-        <img src="images/" alt="">
-        <h3>tour guide</h3>
+        <img src="images/javascript.png" alt="" class="h-full w-full">
+        <h3>Javascript</h3>
       </div>
       <div class="box">
-        <img src="images/" alt="">
-        <h3>trekking</h3>
+        <img src="images/c.jpg" alt="" class="h-full w-full">
+        <h3>C/C++</h3>
       </div>
       <div class="box">
-        <img src="images/" alt="">
-        <h3>camp fire</h3>
+        <img src="images/python.png" alt="" class="h-full w-full">
+        <h3>Python</h3>
       </div>
       <div class="box">
-        <img src="images/" alt="">
-        <h3>off road</h3>
+        <img src="images/nextjs.jpg" alt="" class="h-full w-full">
+        <h3>Next Js</h3>
       </div>
       <div class="box">
-        <img src="images/" alt="">
-        <h3>camping</h3>
+        <img src="images/laravel.png" alt="" class="h-full w-full">
+        <h3>Laravel</h3>
       </div>
     </div>
   </section>
@@ -144,14 +143,12 @@ if (isset($_SESSION['loginInfo'])) {
 
   <section class="home-about">
     <div class="image">
-      <img src="images/home-about.jpg" alt="">
+      <img src="images/icon_se.jpg" alt="">
     </div>
 
     <div class="content">
-      <h3>about us</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, necessitatibus mollitia vitae, voluptatum
-        sapiente esse, nesciunt magnam error ex laudantium ullam. Necessitatibus iusto modi aliquid natus fuga!
-        Inventore, vel! Quaerat?</p>
+      <h3>Software Engineering</h3>
+      <p>software engineer adalah orang yang menggunakan ilmu komputer, prinsip-prinsip teknik dan pemrograman untuk membuat aplikasi software.</p>
       <a href="about.php" class="btn">read more</a>
     </div>
 
@@ -167,39 +164,39 @@ if (isset($_SESSION['loginInfo'])) {
     <div class="box-container">
       <div class="box">
         <div class="image">
-          <img src="images/img-1.jpg">
+          <img src="images/icon_py.jpg" class="object-contain h-30">
         </div>
         <div class="content">
-          <h3>adventure & tour</h3>
-          <p>lorem ipsum dolor sit amet, consectetur adip</p>
-          <a href="course.php" class="btn">book now</a>
+          <h3>Python Bootcamp From Zero to Hero in Python</h3>
+          <p>Take your Python skills to the next level with our Python 3.10 For Advanced course. Explore advanced concepts and techniques to become a proficient Python developer.</p>
+          <a href="course.php" class="btn">Join now</a>
         </div>
       </div>
 
       <div class="box">
         <div class="image">
-          <img src="images/img-2.jpg">
+          <img src="images/icon_py2.jpg" class="object-contain h-30">
         </div>
         <div class="content">
-          <h3>adventure & tour</h3>
-          <p>lorem ipsum dolor sit amet, consectetur adip</p>
-          <a href="course.php" class="btn">book now</a>
+          <h3>Mastery Bootcamp Python For Beginners</h3>
+          <p>Start your journey into the world of programming with our Mastery Bootcamp Python For Beginners. Learn the fundamentals and build a solid foundation in Python.</p>
+          <a href="course.php" class="btn">Join now</a>
         </div>
       </div>
 
       <div class="box">
         <div class="image">
-          <img src="images/img-1.jpg">
+          <img src="images/java.jpg" class="object-contain h-30">
         </div>
         <div class="content">
-          <h3>adventure & tour</h3>
-          <p>lorem ipsum dolor sit amet, consectetur adip</p>
-          <a href="course.php" class="btn">book now</a>
+          <h3>Unleash Your Potential with Java Programming</h3>
+          <p>Dive into the realm of Java programming and unleash your creativity. Master the language that powers countless applications and open up endless opportunities.</p>
+          <a href="course.php" class="btn">Join now</a>
         </div>
       </div>
     </div>
 
-    <div class="load-more"><a href="package.php" class="btn">load more</a></div>
+    <div class="load-more"><a href="course.php" class="btn">load more</a></div>
 
   </section>
 
@@ -279,7 +276,7 @@ if (isset($_SESSION['loginInfo'])) {
 
   <!-- custom js file link -->
   <script src="js/script.js"></script>
-  
+
 </body>
 
 </html>
