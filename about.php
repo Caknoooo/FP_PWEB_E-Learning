@@ -58,7 +58,7 @@ if (isset($_SESSION['loginInfo'])) {
     <a href="home" class="logo">E-Learning</a>
 
     <nav class="navbar">
-      <a href="home.php">home</a>
+      <a href="index.php">home</a>
       <a href="about.php">about</a>
       <a href="course.php">course</a>
       <?php
@@ -236,7 +236,7 @@ if (isset($_SESSION['loginInfo'])) {
     <div class="box-container">
       <div class="box">
         <h3>quick links</h3>
-        <a href="home.php"> <i class="fas fa-angle-right"></i> home</a>
+        <a href="index.php"> <i class="fas fa-angle-right"></i> home</a>
         <a href="about.php"> <i class="fas fa-angle-right"></i> about</a>
         <a href="course.php"> <i class="fas fa-angle-right"></i> course</a>
         <a href="profile.php"> <i class="fas fa-angle-right"></i> profile</a>

@@ -30,7 +30,7 @@ if (isset($_POST['login'])) {
       if ($role == 'admin') {
         header("Location: admin/home.php");
       } elseif ($role == 'user') {
-        header("Location: home.php");
+        header("Location: index.php");
       } else {
         echo "<script>
                 alert('Invalid role');
