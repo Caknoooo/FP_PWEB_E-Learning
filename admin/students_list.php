@@ -57,7 +57,7 @@ if (!isset($_SESSION['email'])) {
           <tbody>
             <?php
             include('../config.php');
-            $result = $db->query("SELECT * FROM user");
+            $result = $db->query("SELECT * FROM user WHERE role = 'user'");
             while ($row = $result->fetch_assoc()) :
             ?>
               <tr class="bg-white align-middle">

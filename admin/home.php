@@ -30,7 +30,7 @@ if (!isset($_SESSION['email'])) {
     include('../config.php');
 
     // Query untuk mengambil jumlah siswa
-    $nbr_students = $db->query("SELECT COUNT(*) as total FROM user");
+    $nbr_students = $db->query("SELECT COUNT(*) as total FROM user WHERE role = 'user'");
     $nbr_students = $nbr_students->fetch_assoc()['total'];
 
     // Query untuk mengambil jumlah course
@@ -83,7 +83,7 @@ if (!isset($_SESSION['email'])) {
           </div>
           <?php
           // Query untuk mengambil jumlah users
-          $nbr_users = $db->query("SELECT COUNT(*) as total FROM user");
+          $nbr_users = $db->query("SELECT COUNT(*) as total FROM user WHERE role = 'user'");
           $nbr_users = $nbr_users->fetch_assoc()['total'];
           ?>
           <span class="h5 fw-bold nbr"><?php echo $nbr_users; ?></span>
